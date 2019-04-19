@@ -1,0 +1,12 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <a class="btn btn-default" href="{% url 'weather_edit' pk=weather.pk %}">Изменить</a>
+    <a class="btn btn-default" href="{% url 'weather_delete' pk=weather.pk %}">Удалить</a>
+    <div>
+        <h1>{{ weather.note }}</h1>
+        <p>{{ weather.training|linebreaksbr }}</p>
+        <p>{{ weather.today|linebreaksbr }}</p>
+        <p>{{ weather.mood|linebreaksbr }}</p>
+    </div>
+{% endblock %}
